@@ -9,6 +9,9 @@ import CartContext from './context/cartContext';
 import MoviePage from './context/MoviePage';
 import Login from './context/Login';
 
+import ReducerCtr from './reducer/Counter';
+import Todo from './reducer/Todo';
+
 const App = () => {
   const [currentUser, setCurrentUser] = useState(null);
 
@@ -24,7 +27,9 @@ const App = () => {
         <Movie id={1} />
         <Counter />
       </div>
+
       <Users />
+
       <CartContext.Provider value={{ cart: [] }}>
         <UserContext.Provider
           value={{ currentUser, onLoggedIn: handleLoggedIn }}
@@ -33,6 +38,9 @@ const App = () => {
           <Login />
         </UserContext.Provider>
       </CartContext.Provider>
+
+      <ReducerCtr />
+      <Todo />
     </Fragment>
   );
 };
